@@ -11,12 +11,19 @@ import {
 } from "lucide-react";
 import { BentoDemo } from "@/components/bento-demo";
 
+/**
+ * Services Page Component
+ * Displays all services offered by Code Factory in a visually appealing layout
+ * using the BentoGrid and BentoCard components for a modern UI approach
+ */
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background">
+      {/* Navigation bar */}
       <Navbar />
 
       <div className="container mx-auto px-4 py-24">
+        {/* Page header section */}
         <div className="mb-16 text-center">
           <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Our Services
@@ -27,10 +34,12 @@ export default function ServicesPage() {
           </p>
         </div>
 
+        {/* Core Development Services section */}
         <h2 className="text-3xl font-bold mb-8 text-foreground">
           Core Development Services
         </h2>
         <BentoGrid className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-20">
+          {/* iOS Development card */}
           <BentoCard
             name="iOS Development"
             className="col-span-1 md:col-span-1"
@@ -43,6 +52,7 @@ export default function ServicesPage() {
             cta="Learn more"
           />
 
+          {/* Android Development card */}
           <BentoCard
             name="Android Development"
             className="col-span-1 md:col-span-1"
@@ -55,6 +65,7 @@ export default function ServicesPage() {
             cta="Learn more"
           />
 
+          {/* Cross-Platform Apps card */}
           <BentoCard
             name="Cross-Platform Apps"
             className="col-span-1 md:col-span-1"
@@ -67,6 +78,7 @@ export default function ServicesPage() {
             cta="Learn more"
           />
 
+          {/* UI/UX Design card */}
           <BentoCard
             name="UI/UX Design"
             className="col-span-1 md:col-span-1"
@@ -79,6 +91,7 @@ export default function ServicesPage() {
             cta="Learn more"
           />
 
+          {/* Backend Development card */}
           <BentoCard
             name="Backend Development"
             className="col-span-1 md:col-span-1"
@@ -91,6 +104,7 @@ export default function ServicesPage() {
             cta="Learn more"
           />
 
+          {/* App Security card */}
           <BentoCard
             name="App Security"
             className="col-span-1 md:col-span-1"
@@ -104,6 +118,7 @@ export default function ServicesPage() {
           />
         </BentoGrid>
 
+        {/* Additional Services section */}
         <h2 className="text-3xl font-bold mb-8 text-foreground">
           Additional Services
         </h2>
@@ -112,9 +127,11 @@ export default function ServicesPage() {
           maintain, and optimize your mobile applications.
         </p>
 
+        {/* BentoDemo component displays additional services in a different layout */}
         <BentoDemo />
       </div>
 
+      {/* Footer component */}
       <Footer />
     </div>
   );

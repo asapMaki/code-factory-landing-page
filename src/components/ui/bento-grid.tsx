@@ -4,6 +4,13 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
+/**
+ * BentoGrid Component
+ * A responsive grid layout for displaying card-like components in a visually appealing way
+ *
+ * @param children - The content to display within the grid (typically BentoCard components)
+ * @param className - Additional CSS classes to apply to the grid
+ */
 const BentoGrid = ({
   children,
   className,
@@ -23,6 +30,19 @@ const BentoGrid = ({
   );
 };
 
+/**
+ * BentoCard Component
+ * A card component designed to be used within the BentoGrid
+ * Features an icon, title, description, and optional link with hover effects
+ *
+ * @param name - The title of the card
+ * @param className - Additional CSS classes to apply to the card
+ * @param background - Background element (usually a gradient div)
+ * @param Icon - Icon component to display at the top of the card
+ * @param description - The descriptive text for the card
+ * @param href - Link URL for the card
+ * @param cta - Call-to-action text for the link
+ */
 const BentoCard = ({
   name,
   className,
@@ -51,7 +71,10 @@ const BentoCard = ({
       className,
     )}
   >
+    {/* Background element (usually a gradient) */}
     <div>{background}</div>
+
+    {/* Card content with icon, title and description */}
     <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
       <Icon className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
       <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
@@ -60,6 +83,7 @@ const BentoCard = ({
       <p className="max-w-lg text-neutral-400">{description}</p>
     </div>
 
+    {/* Call-to-action button that appears on hover */}
     <div
       className={cn(
         "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
@@ -72,6 +96,8 @@ const BentoCard = ({
         </a>
       </Button>
     </div>
+
+    {/* Hover overlay effect */}
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
   </div>
 );
